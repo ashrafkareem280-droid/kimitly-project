@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خطوات | متجر الأحذية العصري</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #3B82F6;
+      --primary-hover: #2563EB;
+      --secondary: #0B1120;
+      --secondary-light: #1E293B;
+      --accent: #F59E0B;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      --radius: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(11, 17, 32, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.8rem 1.5rem;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .brand-logo i {
+      color: var(--primary);
+      font-size: 1.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #E2E8F0;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cart-btn {
+      position: relative;
+      background: var(--secondary-light);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    .cart-btn:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: #EF4444;
+      color: white;
+      font-size: 0.75rem;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--secondary) 0%, #172554 100%);
+      color: white;
+      padding: 5rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
+      top: -100px;
+      left: -100px;
+      border-radius: 50%;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content h1 span {
+      color: var(--primary);
+      background: linear-gradient(90deg, #60A5FA, #93C5FD);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      color: #94A3B8;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.85rem 1.8rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: white;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      transform: rotate(-3deg);
+      transition: var(--transition);
+    }
+
+    .hero-img:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    .floating-badge {
+      position: absolute;
+      bottom: -20px;
+      right: 20px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      color: white;
+    }
+
+    .floating-badge span {
+      display: block;
+      font-size: 0.8rem;
+      color: #94A3B8;
+    }
+
+    .floating-badge strong {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    /* Features Section */
+    .features {
+      padding: 4rem 1.5rem;
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .features-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.2rem;
+      background: var(--bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .feature-info h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .feature-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Products Section */
+    .products-section {
+      padding: 5rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.4rem;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--text-muted);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+      position: relative;
+      height: 240px;
+      background: #f1f5f9;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--primary);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+    }
+
+    .badge-sale {
+      background: #EF4444;
+    }
+
+    .product-details {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .category-name {
+      font-size: 0.8rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    .product-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .rating {
+      color: var(--accent);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .rating span {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-right: 4px;
+    }
+
+    .price-row {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    .price del {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-right: 6px;
+    }
+
+    .add-to-cart {
+      background: var(--primary);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .add-to-cart:hover {
+      background: var(--secondary);
+    }
+
+    /* Cart Sidebar */
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      left: -400px;
+      width: 360px;
+      height: 100vh;
+      background: white;
+      box-shadow: 5px 0 25px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.open {
+      left: 0;
+    }
+
+    .cart-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .close-cart {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .cart-items {
+      flex: 1;
+      padding: 1.5rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .cart-item-details {
+      flex: 1;
+    }
+
+    .cart-item-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .cart-item-price {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .cart-remove {
+      color: #EF4444;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cart-footer {
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .cart-total-row {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      display: none;
+    }
+
+    .backdrop.active {
+      display: block;
+    }
+
+    /* Banner CTA */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--secondary) 0%, #1E3A8A 100%);
+      border-radius: 24px;
+      margin: 3rem auto;
+      max-width: 1200px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .cta-banner h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cta-banner p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #94A3B8;
+    }
+
+    /* Contact / Support Section */
+    .contact-section {
+      background: white;
+      padding: 5rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      background: var(--bg);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .form-control {
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+      outline: none;
+      background: white;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--secondary);
+      color: white;
+      padding: 4rem 1.5rem 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand p {
+      color: #94A3B8;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .footer-links h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      color: white;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-right: 5px;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #64748B;
+      font-size: 0.85rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-content p {
+        margin: 0 auto 2rem;
+      }
+
+      .hero-btns {
+        justify-content: center;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content h1 {
+        font-size: 2.3rem;
+      }
+
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Backdrop overlay -->
+  <div class="backdrop" id="backdrop" onclick="toggleCart()"></div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3 style="font-size: 1.2rem; font-weight: 800;">سلة المشتريات</h3>
+      <button class="close-cart" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Items dynamically injected -->
+      <div style="text-align: center; color: var(--text-muted); margin-top: 3rem;">
+        <i class="fa-solid fa-bag-shopping" style="font-size: 3rem; margin-bottom: 1rem; color: #CBD5E1;"></i>
+        <p>سلتك فارغة حالياً</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>المجموع:</span>
+        <span id="cartTotal">0 ر.س</span>
+      </div>
+      <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="checkoutNotice()">
+        إتمام الطلب
+      </button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <i class="fa-solid fa-shoe-prints"></i>
+        <span>خطوات للأحذية</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#products">الأحذية</a></li>
+        <li><a href="#features">المميزات</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-btn" onclick="toggleCart()">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="cart-count" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>خطواتك الأولى نحو <span>الراحة والأناقة</span> القصوى</h1>
+        <p>تشكيلة راقية من الأحذية الرياضية والكلاسيكية المصممة لتمنح قدميك الراحة طوال اليوم وأفضل مظهر عصري في كل مناسبة.</p>
+        <div class="hero-btns">
+          <a href="#products" class="btn btn-primary">
+            تسوق المجموعة الجديدة <i class="fa-solid fa-arrow-left"></i>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            تواصل معنا
+          </a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="حذاء رياضي أنيق">
+        <div class="floating-badge">
+          <span>أحدث إصدار لعام 2025</span>
+          <strong>خصم يصل إلى 30%</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Strip -->
+  <section class="features" id="features">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <div class="feature-info">
+          <h3>توصيل سريع</h3>
+          <p>شحن لجميع المدن خلال 48 ساعة</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-medal"></i></div>
+        <div class="feature-info">
+          <h3>جودة أصلية 100%</h3>
+          <p>خامات متينة ومقاومة للاهتراء</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-arrow-rotate-left"></i></div>
+        <div class="feature-info">
+          <h3>استبدال سهل</h3>
+          <p>إمكانية الإرجاع والاستبدال خلال 14 يوم</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="feature-info">
+          <h3>دفع آمن</h3>
+          <p>طرق دفع متعددة وموثوقة بالكامل</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section" id="products">
+    <div class="section-header">
+      <h2>أحدث التشكيلات الحصرية</h2>
+      <p>اختر ما يناسب نشاطك من تشكيلات الأحذية الفاخرة</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" onclick="filterShoes('all', event)">الكل</button>
+      <button class="filter-btn" onclick="filterShoes('sport', event)">رياضية</button>
+      <button class="filter-btn" onclick="filterShoes('casual', event)">كاجوال</button>
+      <button class="filter-btn" onclick="filterShoes('classic', event)">رسمية</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="productContainer">
+      <!-- Item 1 -->
+      <div class="product-card" data-category="sport">
+        <div class="product-image">
+          <span class="badge badge-sale">خصم 20%</span>
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="حذاء إير برو فانتوم">
+        </div>
+        <div class="product-details">
+          <span class="category-name">رياضي</span>
+          <h3 class="product-title">إير برو فانتوم الأحمر</h3>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <span>(4.8)</span>
+          </div>
+          <div class="price-row">
+            <div class="price">280 ر.س <del>350 ر.س</del></div>
+            <button class="add-to-cart" onclick="addToCart('إير برو فانتوم الأحمر', 280, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=150&q=80')">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="product-card" data-category="sport">
+        <div class="product-image">
+          <span class="badge">الأكثر مبيعاً</span>
+          <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?auto=format&fit=crop&w=600&q=80" alt="حذاء ركض فليكس">
+        </div>
+        <div class="product-details">
+          <span class="category-name">رياضي</span>
+          <h3 class="product-title">حذاء ركض ألترا فليكس</h3>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <span>(5.0)</span>
+          </div>
+          <div class="price-row">
+            <div class="price">320 ر.س</div>
+            <button class="add-to-cart" onclick="addToCart('حذاء ركض ألترا فليكس', 320, 'https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?auto=format&fit=crop&w=150&q=80')">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="product-card" data-category="casual">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=600&q=80" alt="فانز كاجوال ستايل">
+        </div>
+        <div class="product-details">
+          <span class="category-name">كاجوال</span>
+          <h3 class="product-title">حذاء كانفاس ستريت واك</h3>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <span>(4.2)</span>
+          </div>
+          <div class="price-row">
+            <div class="price">190 ر.س</div>
+            <button class="add-to-cart" onclick="addToCart('حذاء كانفاس ستريت واك', 190, 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=150&q=80')">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="product-card" data-category="classic">
+        <div class="product-image">
+          <span class="badge">جلد طبيعي</span>
+          <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=600&q=80" alt="حذاء رسمي أكسفورد">
+        </div>
+        <div class="product-details">
+          <span class="category-name">رسمي</span>
+          <h3 class="product-title">أكسفورد كلاسيك براون</h3>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <span>(4.6)</span>
+          </div>
+          <div class="price-row">
+            <div class="price">410 ر.س</div>
+            <button class="add-to-cart" onclick="addToCart('أكسفورد كلاسيك براون', 410, 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=150&q=80')">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="product-card" data-category="casual">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80" alt="سنيكرز ملون كاجوال">
+        </div>
+        <div class="product-details">
+          <span class="category-name">كاجوال</span>
+          <h3 class="product-title">سنيكرز باستيل مريح</h3>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <span>(4.9)</span>
+          </div>
+          <div class="price-row">
+            <div class="price">250 ر.س</div>
+            <button class="add-to-cart" onclick="addToCart('سنيكرز باستيل مريح', 250, 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=150&q=80')">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="product-card" data-category="classic">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=600&q=80" alt="لوفر كلاسيكي فاخر">
+        </div>
+        <div class="product-details">
+          <span class="category-name">رسمي</span>
+          <h3 class="product-title">لوفر إيطالي كلاسيك</h3>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <span>(4.4)</span>
+          </div>
+          <div class="price-row">
+            <div class="price">390 ر.س</div>
+            <button class="add-to-cart" onclick="addToCart('لوفر إيطالي كلاسيك', 390, 'https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=150&q=80')">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <div style="padding: 0 1.5rem;">
+    <section class="cta-banner">
+      <h2>احصل على حذائك المفضل بخصم 15%</h2>
+      <p>استخدم كود الخصم (STEP15) عند إتمام عملية الشراء للاستمتاع بخصم إضافي على جميع المنتجات الجديدة.</p>
+      <a href="#products" class="btn btn-primary" style="background: white; color: var(--secondary);">
+        ابدأ التسوق الآن <i class="fa-solid fa-bag-shopping"></i>
+      </a>
+    </section>
+  </div>
+
+  <!-- Contact & Newsletter Form -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <div class="section-header">
+        <h2>هل لديك أي استفسار؟</h2>
+        <p>فريقنا مستعد للإجابة على أسئلتك ومساعدتك في اختيار المقاس المناسب</p>
+      </div>
+
+      <form class="contact-form" id="contactForm" onsubmit="handleContact(event)">
+        <div class="form-group">
+          <label for="name">الاسم الكامل</label>
+          <input type="text" id="name" class="form-control" placeholder="أدخل اسمك" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">رقم الهاتف</label>
+          <input type="tel" id="phone" class="form-control" placeholder="05XXXXXXXX" required>
+        </div>
+        <div class="form-group full-width">
+          <label for="shoeInterest">نوع الحذاء المهتم به</label>
+          <select id="shoeInterest" class="form-control">
+            <option>أحذية رياضية للجري</option>
+            <option>أحذية كاجوال يومية</option>
+            <option>أحذية جلدية رسمية</option>
+            <option>استفسار حول المقاسات والتبديل</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label for="message">الرسالة أو الملاحظة</label>
+          <textarea id="message" class="form-control" placeholder="اكتب تفاصيل استفسارك هنا..." required></textarea>
+        </div>
+        <div class="form-group full-width">
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            إرسال الاستفسار <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+        <div id="contactSuccess" class="full-width" style="display: none; background: #DCFCE7; color: #166534; padding: 1rem; border-radius: 10px; text-align: center; font-weight: 700;">
+          شكراً لتواصلك معنا! سنقوم بالرد عليك خلال ساعات قليلة عبر الواتساب أو الهاتف.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="brand-logo">
+          <i class="fa-solid fa-shoe-prints"></i>
+          <span>خطوات للأحذية</span>
+        </a>
+        <p>وجهتك الأولى لأحدث وأجود موديلات الأحذية العصرية. نجمع بين الأناقة الفائقة والراحة الدائمة لترافقك في كل خطوة.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#products">كل الأحذية</a></li>
+          <li><a href="#features">المميزات</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>خدمة العملاء</h4>
+        <ul>
+          <li><a href="#">دليل المقاسات</a></li>
+          <li><a href="#">سياسة الاسترجاع والتبديل</a></li>
+          <li><a href="#">الشحن والتسليم</a></li>
+          <li><a href="#">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><i class="fa-solid fa-location-dot" style="margin-left: 8px;"></i> الرياض - المملكة العربية السعودية</li>
+          <li><i class="fa-solid fa-phone" style="margin-left: 8px;"></i> +966 50 123 4567</li>
+          <li><i class="fa-solid fa-envelope" style="margin-left: 8px;"></i> info@khatawat-shoes.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>جميع الحقوق محفوظة © 2025 متجر خطوات للأحذية</p>
+    </div>
+  </footer>
+
+  <script>
+    // Cart logic
+    let cart = [];
+
+    function toggleCart() {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('backdrop');
+      drawer.classList.toggle('open');
+      backdrop.classList.toggle('active');
+    }
+
+    function addToCart(title, price, image) {
+      cart.push({ title, price, image });
+      updateCartUI();
+      // Show notification badge effect
+      const badge = document.getElementById('cartBadge');
+      badge.style.transform = 'scale(1.3)';
+      setTimeout(() => badge.style.transform = 'scale(1)', 200);
+      toggleCart();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const container = document.getElementById('cartItems');
+      const badge = document.getElementById('cartBadge');
+      const totalEl = document.getElementById('cartTotal');
+
+      badge.innerText = cart.length;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; color: var(--text-muted); margin-top: 3rem;">
+            <i class="fa-solid fa-bag-shopping" style="font-size: 3rem; margin-bottom: 1rem; color: #CBD5E1;"></i>
+            <p>سلتك فارغة حالياً</p>
+          </div>
+        `;
+        totalEl.innerText = '0 ر.س';
+        return;
+      }
+
+      let total = 0;
+      let html = '';
+
+      cart.forEach((item, idx) => {
+        total += item.price;
+        html += `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.title}">
+            <div class="cart-item-details">
+              <div class="cart-item-title">${item.title}</div>
+              <div class="cart-item-price">${item.price} ر.س</div>
+            </div>
+            <button class="cart-remove" onclick="removeFromCart(${idx})" title="حذف">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+      totalEl.innerText = total + ' ر.س';
+    }
+
+    function checkoutNotice() {
+      if (cart.length === 0) {
+        alert('سلتك فارغة، تفضل باختيار أحذية أولاً!');
+        return;
+      }
+      alert('شكراً لك! سيتم نقلك لتأكيد العنوان والتوصيل.');
+    }
+
+    // Filter Products
+    function filterShoes(category, e) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      e.target.classList.add('active');
+
+      const items = document.querySelectorAll('.product-card');
+      items.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Contact Form handling
+    function handleContact(e) {
+      e.preventDefault();
+      document.getElementById('contactSuccess').style.display = 'block';
+      document.getElementById('contactForm').reset();
+    }
+  </script>
+</body>
+</html>
